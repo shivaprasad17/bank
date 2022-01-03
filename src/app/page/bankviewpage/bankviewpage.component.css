@@ -1,0 +1,17 @@
+.titleDiv {
+  display: grid;
+}
+.gridTileLeft > ::ng-deep .mat-grid-tile-content {
+  justify-content: start !important;
+}
+.gridTileRight > ::ng-deep .mat-grid-tile-content {
+  justify-content: end !important;
+}
+.editBtn {
+  background: #1976d2;
+  color: white;
+  margin-right: 15px;
+}
+.detailsWrapper {
+  padding-top: 20px;
+}

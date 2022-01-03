@@ -1,0 +1,17 @@
+
+<mat-grid-list cols="2" rowHeight="55px" gutterSize="20px">
+<mat-grid-tile class="gridTileLeft">
+    <div class="titleDiv">
+        <app-titleone>Bank Details</app-titleone>  
+        <app-titletwo>{{viewDetails.name}}</app-titletwo>
+    </div>
+</mat-grid-tile>
+<mat-grid-tile class="gridTileRight">
+    <button mat-raised-button class="editBtn" >Edit</button>
+    <button mat-raised-button class="backBtn">Back</button>
+</mat-grid-tile>
+</mat-grid-list>
+<div class="detailsWrapper">
+        <app-bankview [viewDetails]="viewDetails"></app-bankview>
+</div>
+

@@ -1,0 +1,9 @@
+.titleOne {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  color: #4d5f79;
+  line-height: 33px;
+  vertical-align: top;
+  margin-bottom: 4px;
+}

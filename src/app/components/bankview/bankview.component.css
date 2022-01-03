@@ -1,0 +1,14 @@
+.detailsTile > ::ng-deep .mat-grid-tile-content {
+  justify-content: start !important;
+  display: grid;
+}
+.detailsLabel {
+  font-size: 12px;
+  font-weight: normal !important;
+  color: #6f6f6f !important;
+  text-transform: uppercase;
+}
+.detailsValue {
+  font-size: 14px !important;
+  color: #262626 !important;
+}

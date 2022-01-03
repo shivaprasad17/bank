@@ -1,0 +1,21 @@
+<div class="titleDiv">
+    <app-titleone>Bank Details</app-titleone>  
+    <app-titletwo>{{bankDetailsForm.value.name}}</app-titletwo> 
+</div>
+<div>
+    <app-bankdetailsform [bankdetails]=bankDetailsForm [isEdit]=true (submitBankDetails)="editBankDetails($event)"></app-bankdetailsform>
+</div>
+<div class="notesWrapper">
+    <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Notes">
+            <app-noteslist [bankdetails]=bankDetailsForm (addNotes)="addNotes($event)" (deleteNotes)="deleteNotes($event)"></app-noteslist>
+        </mat-tab>
+        <mat-tab label="Files">Files</mat-tab>
+        <mat-tab label="work Flow">Work Flow</mat-tab>
+      </mat-tab-group>
+</div>
+
+<div class="optionsDiv">
+    <button mat-raised-button class="submitBtn" [disabled]=!bankDetailsForm.valid  (click)="editBankDetails(bankDetailsForm)">Submit</button>
+    <button mat-raised-button class="cancelBtn">Cancel</button>
+</div>

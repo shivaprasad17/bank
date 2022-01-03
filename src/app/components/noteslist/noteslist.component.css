@@ -1,0 +1,52 @@
+table {
+  width: 100%;
+  border: 1px solid gainsboro;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.tableHeader {
+  background: rgba(0, 0, 0, 0.12);
+  text-transform: uppercase;
+  height: 30px;
+}
+.tableFormHeader {
+  height: 50px;
+}
+td.mat-cell {
+  color: black;
+}
+.mat-column-title {
+  width: 14% !important;
+}
+.mat-column-memo {
+  width: 14% !important;
+}
+.mat-column-time {
+  width: 14% !important;
+}
+.mat-column-date {
+  width: 14% !important;
+}
+.mat-column-type {
+  width: 14% !important;
+}
+.mat-column-direction {
+  width: 14% !important;
+}
+.memotxtField {
+  padding-right: 10px;
+}
+.memotxtField .mat-form-field-wrapper {
+  padding-bottom: 0px !important;
+}
+.astricSymbol {
+  color: red;
+}
+.submitNote {
+  color: green;
+}
+td.mat-cell {
+  color: black;
+}

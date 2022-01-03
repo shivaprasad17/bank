@@ -1,0 +1,6 @@
+.example-container {
+  height: -webkit-fill-available;
+}
+.mat-list-base {
+  padding-top: 70px;
+}

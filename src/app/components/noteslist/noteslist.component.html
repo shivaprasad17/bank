@@ -1,0 +1,111 @@
+<table mat-table [dataSource]="bankdetails.value.notes" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+    <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>TITLE</th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+    </ng-container>
+    <ng-container matColumnDef="memo">
+        <th mat-header-cell *matHeaderCellDef>MEMO<span class="astricSymbol">*</span></th>
+        <td mat-cell *matCellDef="let element"> {{element.memo}} </td>
+    </ng-container>
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>DATE</th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef>TIME</th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+    </ng-container>
+    <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>TYPE</th>
+        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+    </ng-container>
+    <ng-container matColumnDef="direction">
+        <th mat-header-cell *matHeaderCellDef>DIRECTION</th>
+        <td mat-cell *matCellDef="let element"> {{element.direction}} </td>
+    </ng-container>
+    <ng-container matColumnDef="options">
+        <th mat-header-cell *matHeaderCellDef style="text-align: end;">
+            <button mat-icon-button color="primary" aria-label="icon button with a add icon" (click)="addNotesForm()">
+                <mat-icon>
+                    add_circle
+                </mat-icon>
+              </button>
+            </th>
+        <td mat-cell *matCellDef="let element" style="text-align: end;">
+            <button mat-icon-button color="warn" (click)="cancelNotes(element)">
+            <mat-icon>
+                cancel
+            </mat-icon>
+          </button>
+        </td>
+    </ng-container>
+
+
+    <form [formGroup]="notesForm">
+        <ng-container matColumnDef="titleField">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field appearance="outline" style="font-size: 10px;padding-right: 10px;">
+                    <input matInput formControlName="title">
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container matColumnDef="memoField">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field appearance="outline" class="memotxtField" style=" margin-bottom: -12px">
+                    <textarea matInput formControlName="memo"></textarea>
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container matColumnDef="dateField">
+            <th mat-header-cell *matHeaderCellDef> {{notesForm.value.date}} </th>
+        </ng-container>
+        <ng-container matColumnDef="timeField">
+            <th mat-header-cell *matHeaderCellDef> {{notesForm.value.time}} </th>
+        </ng-container>
+        <ng-container matColumnDef="typeField">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field appearance="outline" style="font-size: 10px;padding-right: 10px;">
+                    <input matInput formControlName="type">
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container matColumnDef="directionField">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field appearance="outline" style="font-size: 10px;padding-right: 10px;">
+                    <input matInput formControlName="direction">
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container matColumnDef="optionsField">
+            <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">
+                <div style="display: flex;">
+                    <button mat-icon-button  class="submitNote" [disabled]="!notesForm.valid" (click)="submitNotes()">
+                        <mat-icon>
+                            check_circle
+                        </mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="closeNotes()">
+                        <mat-icon>
+                            cancel
+                        </mat-icon>
+                    </button>
+                </div>
+                
+            </th>
+        </ng-container>
+    </form>
+
+  
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="tableHeader"></tr>
+    <tr mat-header-row [ngStyle]="{'display':addNewNotes ? 'contents' : 'none' }"
+            *matHeaderRowDef="['titleField','memoField','dateField','timeField','typeField', 'directionField','optionsField']" class="tableFormHeader"></tr>
+
+
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns; let rowIndex = index;"></tr>
+</table>

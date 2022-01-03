@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.tableHeader {
+  background: #e5e5e5 none !important;
+  text-transform: uppercase;
+}
+td.mat-cell {
+  color: black;
+}
+.editIcon {
+  font-size: 20px;
+  color: #607799;
+  cursor: pointer;
+}
+.deleteIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+  border-bottom: 3px solid gainsboro;
+}
